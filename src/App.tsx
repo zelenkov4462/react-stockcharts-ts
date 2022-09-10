@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
+import axios from "axios";
+import DataProvider from "./Context/GetData/DataContext";
+import SimulationProvider from "./Context/SimulationNameAndValue/SimulationContext";
+import InputSimulationData from "./components/InputSimulationData/InputSimulationDta";
+import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <DataProvider>
+        <SimulationProvider>
+          <InputSimulationData />
+          <HomePage />
+        </SimulationProvider>
+      </DataProvider>
+    </>
   );
 }
 
