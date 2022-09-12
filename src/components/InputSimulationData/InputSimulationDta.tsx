@@ -12,7 +12,7 @@ const InputSimulationData: FC = memo(() => {
     valueTimeFrame,
   } = useSimulation();
 
-  const { dataSim, setDataSim } = useData();
+  const { setDataSim } = useData();
 
   const arrValueTimeFrame = [
     "WTF",
